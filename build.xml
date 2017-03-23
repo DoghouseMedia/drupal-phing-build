@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="buildbase" default="build">
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <!-- # Imports                                                             -->
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <import file="vendor/jorgegc/phing-compass/build.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-phpcs/build.xml" optional="true" />
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <!-- # Properties                                                          -->
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <copy file="${phing.dir.buildbase}/build.default.properties" tofile="build.properties" overwrite="true" />
+
+  <if>
+    <not><equals arg1="${phing.dir}" arg2="${phing.dir.buildbase}" /></not>
+    <then>
+      <append file="${project.basedir}/build.default.properties" destFile="build.properties" />
+      <append file="${project.basedir}/build.local.properties" destFile="build.properties" />
+    </then>
+  </if>
+
+  <property file="build.properties" override="true" />
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <!-- # Main targets                                                        -->
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <!-- ## Base targets -->
+
+  <target name="init"
+          description="Initialises and prepares the project for a new build."
+          depends="prepare:deps, prepare:env, prepare:wd, prepare:db" />
+
+  <target name="build"
+          description="Performs a complete build of the project."
+          depends="init, clean, compile, verify, analyze" />
+
+  <target name="compile"
+          description="Ensures the code is compiled and ready to go."
+          depends="prepare:wd, compass:compile-rvm" />
+
+  <target name="verify"
+          description="Checks whether the code is clean and functional."
+          depends="prepare:wd" />
+
+  <target name="analyze"
+          description="Checks whether the code complies with coding standards and best practices."
+          depends="prepare:wd, phpcs:check" />
+
+  <target name="clean"
+          description="Cleans up the project entirely."
+          depends="clean:wd, clean:db" />
+
+  <!-- ## Preparation targets -->
+
+  <target name="prepare:deps"
+          description="Prepares dependencies for a new build."
+          depends="git-submodule:config"
+          unless="build.deps.prepared">
+    <property name="build.deps.prepared" value="true" />
+  </target>
+
+  <target name="prepare:env"
+          description="Prepares the environment for a new build."
+          depends="compass:config-rvm, npm:config"
+          unless="build.env.prepared">
+    <property name="build.env.prepared" value="true" />
+  </target>
+
+  <target name="prepare:wd"
+          description="Prepares the working directory for a new build."
+          depends="clean:wd"
+          unless="build.wd.prepared">
+    <property name="build.wd.prepared" value="true" />
+  </target>
+
+  <target name="prepare:db"
+          description="Prepares the database for a new build."
+          depends="clean:db"
+          unless="build.db.prepared">
+    <property name="build.db.prepared" value="true" />
+  </target>
+
+  <!-- ## Cleanup targets -->
+
+  <target name="clean:wd"
+          description="Deletes old artifacts from the working directory."
+          unless="build.wd.cleaned">
+    <delete dir="${build.logs.dir}" />
+    <mkdir dir="${build.logs.dir}" />
+    <property name="build.wd.cleaned" value="true" />
+  </target>
+
+  <target name="clean:db"
+          description="Deletes old tables from the database."
+          unless="build.db.cleaned">
+    <property name="build.db.cleaned" value="true" />
+  </target>
+
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+  <!-- # Helper targets                                                      -->
+  <!-- ///////////////////////////////////////////////////////////////////// -->
+
+  <!-- ## Git targets -->
+
+  <target name="git-submodule:config"
+          description="Configures Git submodules for the project.">
+    <exec command="git submodule update --init --recursive" passthru="true" checkreturn="true" />
+  </target>
+
+  <!-- ## npm targets -->
+
+  <target name="npm:config"
+          description="Configures npm packages for the project.">
+    <exec command="npm install" passthru="true" checkreturn="true" />
+  </target>
+
+</project>

@@ -1,0 +1,12 @@
+{
+    "name": "doghouse/drupal-build",
+    "description": "A default build system for Drupal projects.",
+    "require": {
+        "phing/phing": "~2.7",
+        "jorgegc/phing-compass": "~1.0",
+        "jorgegc/phing-phpcs": "~2.0"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
