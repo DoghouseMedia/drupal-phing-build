@@ -7,6 +7,17 @@
   <!-- ///////////////////////////////////////////////////////////////////// -->
 
   <import file="vendor/jorgegc/phing-compass/build.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.cache.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.cron.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.database.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.download.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.features.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.files.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.install.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.maintenance.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.user.xml" optional="true" />
+  <import file="vendor/jorgegc/phing-drush/build.watchdog.xml" optional="true" />
   <import file="vendor/jorgegc/phing-phpcs/build.xml" optional="true" />
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
@@ -38,6 +49,10 @@
   <target name="build"
           description="Performs a complete build of the project."
           depends="init, clean, compile, verify, analyze" />
+
+  <target name="build-ci"
+          description="Performs a complete build of the project for the continuous integration server."
+          depends="prepare:deps, prepare:env, prepare:wd, clean, compile, verify, analyze" />
 
   <target name="compile"
           description="Ensures the code is compiled and ready to go."
@@ -73,14 +88,14 @@
 
   <target name="prepare:wd"
           description="Prepares the working directory for a new build."
-          depends="clean:wd"
+          depends="clean:wd, drush:config"
           unless="build.wd.prepared">
     <property name="build.wd.prepared" value="true" />
   </target>
 
   <target name="prepare:db"
           description="Prepares the database for a new build."
-          depends="clean:db"
+          depends="clean:db, drush-database:create, drush-database:sync, drush-database:update, drush-features:import, drush-user:logout-all, drush-watchdog:clear, drush-maintenance:off, drush-cache:rebuild"
           unless="build.db.prepared">
     <property name="build.db.prepared" value="true" />
   </target>
@@ -97,6 +112,7 @@
 
   <target name="clean:db"
           description="Deletes old tables from the database."
+          depends="drush-database:drop"
           unless="build.db.cleaned">
     <property name="build.db.cleaned" value="true" />
   </target>
