@@ -52,7 +52,7 @@
 
   <target name="build-ci"
           description="Performs a complete build of the project for the continuous integration server."
-          depends="prepare:deps, prepare:env, prepare:wd, clean, compile, verify, analyze" />
+          depends="prepare:deps, prepare:env, prepare:wd, clean-ci, compile, verify, analyze" />
 
   <target name="compile"
           description="Ensures the code is compiled and ready to go."
@@ -69,6 +69,10 @@
   <target name="clean"
           description="Cleans up the project entirely."
           depends="clean:wd, clean:db" />
+
+<target name="clean-ci"
+          description="Cleans up the project for the continuous integration server."
+          depends="clean:wd" />
 
   <!-- ## Preparation targets -->
 
