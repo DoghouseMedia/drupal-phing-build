@@ -28,7 +28,7 @@ project's build base.
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="PROJECT-NAME" default="build">
+<project name="PROJECT-NAME" default="help">
   <import file="vendor/doghouse/drupal-build/build.xml" />
 </project>
 ```

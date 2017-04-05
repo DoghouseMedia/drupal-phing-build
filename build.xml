@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="buildbase" default="build">
+<project name="buildbase" default="help">
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <!-- # Imports                                                             -->
@@ -41,6 +41,11 @@
   <!-- ///////////////////////////////////////////////////////////////////// -->
 
   <!-- ## Base targets -->
+
+  <target name="help"
+          description="Lists available targets in this project.">
+    <exec command="${phing.home}/bin/phing -l" passthru="true" checkreturn="true" />
+  </target>
 
   <target name="init"
           description="Initialises and prepares the project for a new build."
