@@ -70,7 +70,7 @@
           description="Cleans up the project entirely."
           depends="clean:wd, clean:db" />
 
-<target name="clean-ci"
+  <target name="clean-ci"
           description="Cleans up the project for the continuous integration server."
           depends="clean:wd" />
 
@@ -130,6 +130,16 @@
   <target name="git-submodule:config"
           description="Configures Git submodules for the project.">
     <exec command="git submodule update --init --recursive" passthru="true" checkreturn="true" />
+  </target>
+
+  <!-- ## Grunt targets -->
+
+  <target name="grunt:run-rvm"
+          description="Runs Grunt via RVM."
+          depends="compass:load-properties-rvm">
+    <exec command="${rvm.cmd.gemset} do grunt"
+          passthru="true"
+          checkreturn="true" />
   </target>
 
   <!-- ## npm targets -->
