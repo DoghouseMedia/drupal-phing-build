@@ -61,7 +61,7 @@
 
   <target name="compile"
           description="Ensures the code is compiled and ready to go."
-          depends="prepare:wd, compass:compile-rvm" />
+          depends="prepare:wd, compass:compile-rbenv" />
 
   <target name="verify"
           description="Checks whether the code is clean and functional."
@@ -90,7 +90,7 @@
 
   <target name="prepare:env"
           description="Prepares the environment for a new build."
-          depends="compass:config-rvm, npm:config"
+          depends="compass:config-rbenv, npm:config"
           unless="build.env.prepared">
     <property name="build.env.prepared" value="true" />
   </target>
@@ -139,10 +139,10 @@
 
   <!-- ## Grunt targets -->
 
-  <target name="grunt:run-rvm"
-          description="Runs Grunt via RVM."
-          depends="compass:load-properties-rvm">
-    <exec command="${rvm.cmd.gemset} do grunt"
+  <target name="grunt:run-rbenv"
+          description="Runs Grunt via RBENV."
+          depends="compass:load-properties-rbenv">
+    <exec command="${rbenv.cmd.gemset} grunt"
           passthru="true"
           checkreturn="true" />
   </target>
