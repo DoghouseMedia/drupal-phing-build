@@ -34,6 +34,14 @@
     </then>
   </if>
 
+  <if>
+    <isset property="site" />
+    <then>
+      <append file="${project.basedir}/build.${site}.properties" destFile="build.properties" />
+      <append file="${project.basedir}/build.${site}.local.properties" destFile="build.properties" />
+    </then>
+  </if>
+
   <property file="build.properties" override="true" />
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
