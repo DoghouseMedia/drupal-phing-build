@@ -429,16 +429,16 @@
         },
         {
             "name": "jorgegc/phing-phpcs",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jorgegc/phing-phpcs.git",
-                "reference": "f68c507509656112968b258502523e0db440325b"
+                "reference": "3d00783c2e04c2b11dcbe844d37dc53d28b1dce6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jorgegc/phing-phpcs/zipball/f68c507509656112968b258502523e0db440325b",
-                "reference": "f68c507509656112968b258502523e0db440325b",
+                "url": "https://api.github.com/repos/jorgegc/phing-phpcs/zipball/3d00783c2e04c2b11dcbe844d37dc53d28b1dce6",
+                "reference": "3d00783c2e04c2b11dcbe844d37dc53d28b1dce6",
                 "shasum": ""
             },
             "require": {
@@ -455,7 +455,7 @@
                 "phing",
                 "phpcs"
             ],
-            "time": "2017-03-27 01:51:25"
+            "time": "2017-04-27 01:26:22"
         },
         {
             "name": "nikic/php-parser",

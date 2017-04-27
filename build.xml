@@ -59,13 +59,17 @@
           description="Initialises and prepares the project for a new build."
           depends="prepare:deps, prepare:env, prepare:wd, prepare:db" />
 
+  <target name="init:ci"
+          description="Initialises and prepares the project for a new build for the CI server."
+          depends="prepare:deps, prepare:env, prepare:wd" />
+
   <target name="build"
           description="Performs a complete build of the project."
-          depends="init, clean, compile, verify, analyze" />
+          depends="init, clean, compile, verify, analyse" />
 
-  <target name="build-ci"
-          description="Performs a complete build of the project for the continuous integration server."
-          depends="prepare:deps, prepare:env, prepare:wd, clean-ci, compile, verify, analyze" />
+  <target name="build:ci"
+          description="Performs a complete build of the project for the CI server."
+          depends="init:ci, clean:ci, compile, verify, analyse:ci" />
 
   <target name="compile"
           description="Ensures the code is compiled and ready to go."
@@ -75,16 +79,20 @@
           description="Checks whether the code is clean and functional."
           depends="prepare:wd" />
 
-  <target name="analyze"
+  <target name="analyse"
           description="Checks whether the code complies with coding standards and best practices."
           depends="prepare:wd, phpcs:check" />
+
+  <target name="analyse:ci"
+          description="Checks whether the code complies with coding standards and best practices for the CI server."
+          depends="prepare:wd, phpcs:check:ci" />
 
   <target name="clean"
           description="Cleans up the project entirely."
           depends="clean:wd, clean:db" />
 
-  <target name="clean-ci"
-          description="Cleans up the project for the continuous integration server."
+  <target name="clean:ci"
+          description="Cleans up the project for the CI server."
           depends="clean:wd" />
 
   <!-- ## Preparation targets -->
