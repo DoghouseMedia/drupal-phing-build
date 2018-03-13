@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "38bbb3665d8ef52a12869237883fcd54",
-    "content-hash": "2ace5312d0b78b4d87ec7787246236d9",
+    "content-hash": "3891d18f8cca0fc8120954a4d3d64fd2",
     "packages": [
         {
             "name": "consolidation/annotated-command",
@@ -57,7 +56,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2017-04-03 22:37:00"
+            "time": "2017-04-03T22:37:00+00:00"
         },
         {
             "name": "consolidation/output-formatters",
@@ -106,7 +105,7 @@
                 }
             ],
             "description": "Format text by applying transformations provided by plug-in formatters.",
-            "time": "2017-03-01 20:54:45"
+            "time": "2017-03-01T20:54:45+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -139,21 +138,15 @@
                 "MIT"
             ],
             "description": "implementation of xdg base directory specification for php",
-            "time": "2014-10-24 07:27:01"
+            "time": "2014-10-24T07:27:01+00:00"
         },
         {
             "name": "drupal/coder",
             "version": "8.2.12",
             "source": {
                 "type": "git",
-                "url": "https://github.com/klausi/coder.git",
+                "url": "https://git.drupal.org/project/coder.git",
                 "reference": "984c54a7b1e8f27ff1c32348df69712afd86b17f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/klausi/coder/zipball/984c54a7b1e8f27ff1c32348df69712afd86b17f",
-                "reference": "984c54a7b1e8f27ff1c32348df69712afd86b17f",
-                "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
@@ -176,7 +169,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-03-18 10:28:49"
+            "time": "2017-03-18T10:28:49+00:00"
         },
         {
             "name": "drush/drush",
@@ -281,7 +274,7 @@
             ],
             "description": "Drush is a command line shell and scripting interface for Drupal, a veritable Swiss Army knife designed to make life easier for those of us who spend some of our working hours hacking away at the command prompt.",
             "homepage": "http://www.drush.org",
-            "time": "2017-02-23 20:46:12"
+            "time": "2017-02-23T20:46:12+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -324,7 +317,7 @@
                     "homepage": "http://www.acci.cz"
                 }
             ],
-            "time": "2014-04-08 15:00:19"
+            "time": "2014-04-08T15:00:19+00:00"
         },
         {
             "name": "jakub-onderka/php-console-highlighter",
@@ -368,7 +361,7 @@
                     "homepage": "http://www.acci.cz/"
                 }
             ],
-            "time": "2015-04-20 18:58:01"
+            "time": "2015-04-20T18:58:01+00:00"
         },
         {
             "name": "jorgegc/phing-compass",
@@ -395,20 +388,20 @@
                 "compass",
                 "phing"
             ],
-            "time": "2017-04-13 08:50:09"
+            "time": "2017-04-13T08:50:09+00:00"
         },
         {
             "name": "jorgegc/phing-drush",
-            "version": "3.0.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jorgegc/phing-drush.git",
-                "reference": "4eafea1a7a226e3f21f229aa3fa6fa17f53e33c4"
+                "reference": "b527f735b21a4f98c507e7ac0970e5413ad362a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jorgegc/phing-drush/zipball/4eafea1a7a226e3f21f229aa3fa6fa17f53e33c4",
-                "reference": "4eafea1a7a226e3f21f229aa3fa6fa17f53e33c4",
+                "url": "https://api.github.com/repos/jorgegc/phing-drush/zipball/b527f735b21a4f98c507e7ac0970e5413ad362a3",
+                "reference": "b527f735b21a4f98c507e7ac0970e5413ad362a3",
                 "shasum": ""
             },
             "require": {
@@ -417,7 +410,7 @@
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-2.0+"
+                "MIT"
             ],
             "description": "A collection of Drush targets for Phing.",
             "homepage": "https://github.com/jorgegc/phing-drush",
@@ -425,7 +418,7 @@
                 "Drush",
                 "phing"
             ],
-            "time": "2017-03-29 03:38:53"
+            "time": "2018-02-02T04:52:11+00:00"
         },
         {
             "name": "jorgegc/phing-phpcs",
@@ -455,7 +448,7 @@
                 "phing",
                 "phpcs"
             ],
-            "time": "2017-04-27 01:26:22"
+            "time": "2017-04-27T01:26:22+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -506,7 +499,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-03-05 18:23:57"
+            "time": "2017-03-05T18:23:57+00:00"
         },
         {
             "name": "pear/console_table",
@@ -561,7 +554,7 @@
             "keywords": [
                 "console"
             ],
-            "time": "2016-01-21 16:14:31"
+            "time": "2016-01-21T16:14:31+00:00"
         },
         {
             "name": "phing/phing",
@@ -654,7 +647,7 @@
                 "task",
                 "tool"
             ],
-            "time": "2016-10-13 09:01:45"
+            "time": "2016-10-13T09:01:45+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -703,7 +696,7 @@
                     "email": "mike.vanriel@naenius.com"
                 }
             ],
-            "time": "2015-02-03 12:10:50"
+            "time": "2015-02-03T12:10:50+00:00"
         },
         {
             "name": "psr/log",
@@ -750,7 +743,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "psy/psysh",
@@ -823,7 +816,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-03-19 21:40:44"
+            "time": "2017-03-19T21:40:44+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -901,7 +894,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2017-03-01 22:17:45"
+            "time": "2017-03-01T22:17:45+00:00"
         },
         {
             "name": "symfony/console",
@@ -962,7 +955,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-03 20:37:06"
+            "time": "2017-04-03T20:37:06+00:00"
         },
         {
             "name": "symfony/debug",
@@ -1019,7 +1012,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-30 07:22:48"
+            "time": "2016-07-30T07:22:48+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1079,7 +1072,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-04-03 20:37:06"
+            "time": "2017-04-03T20:37:06+00:00"
         },
         {
             "name": "symfony/finder",
@@ -1128,7 +1121,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-20 08:46:40"
+            "time": "2017-03-20T08:46:40+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1187,7 +1180,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -1253,7 +1246,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2017-03-12 16:01:59"
+            "time": "2017-03-12T16:01:59+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1302,7 +1295,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-20 09:41:44"
+            "time": "2017-03-20T09:41:44+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -1352,7 +1345,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-11-23 20:04:58"
+            "time": "2016-11-23T20:04:58+00:00"
         },
         {
             "name": "webmozart/path-util",
@@ -1398,7 +1391,7 @@
                 }
             ],
             "description": "A robust cross-platform utility for normalizing, comparing and modifying file paths.",
-            "time": "2015-12-17 08:42:14"
+            "time": "2015-12-17T08:42:14+00:00"
         }
     ],
     "packages-dev": [],
