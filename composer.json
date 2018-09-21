@@ -4,7 +4,7 @@
     "require": {
         "phing/phing": "~2.7",
         "jorgegc/phing-compass": "~1.0",
-        "jorgegc/phing-drush": "~4.0",
+        "jorgegc/phing-drush": "~4.2",
         "jorgegc/phing-phpcs": "~2.0"
     },
     "config": {
