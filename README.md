@@ -38,14 +38,14 @@ project's build base.
 This project ships with sensible defaults, however you must override some of its
 properties to suit your project.
 
-  1. Copy [build.example.properties](http://stash.dhmedia.com.au/projects/DB/repos/drupal-build/browse/build.example.properties)
+  1. Copy [build.example.properties](https://github.com/DoghouseMedia/drupal-phing-build/blob/master/build.example.properties)
      to create a `build.default.properties` file at the root of your project.
   2. Update the necessary build properties and save.
 
 If you need to override properties for your local environment only, you can do
 so by creating a `build.local.properties` and placing it in the same directory.
 
-A full list of properties can be found [here](http://stash.dhmedia.com.au/projects/DB/repos/drupal-build/browse/build.default.properties).
+A full list of properties can be found [here](https://github.com/DoghouseMedia/drupal-phing-build/blob/master/browse/build.default.properties).
 
 ### Compass configuration
 
