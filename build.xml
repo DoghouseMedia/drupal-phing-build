@@ -6,19 +6,19 @@
   <!-- # Imports                                                             -->
   <!-- ///////////////////////////////////////////////////////////////////// -->
 
-  <import file="vendor/jorgegc/phing-compass/build.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.cache.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.cron.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.database.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.download.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.features.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.files.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.install.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.maintenance.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.user.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.watchdog.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-phpcs/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-compass/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.cache.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.cron.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.database.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.download.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.features.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.files.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.install.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.maintenance.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.user.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.watchdog.xml" optional="true" />
+  <import file="vendor/doghouseagency/drupal-phing-build/phing-phpcs/build.xml" optional="true" />
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <!-- # Properties                                                          -->
@@ -73,7 +73,7 @@
 
   <target name="compile"
           description="Ensures the code is compiled and ready to go."
-          depends="prepare:wd, compass:compile-rbenv" />
+          depends="prepare:wd" />
 
   <target name="verify"
           description="Checks whether the code is clean and functional."
@@ -106,7 +106,7 @@
 
   <target name="prepare:env"
           description="Prepares the environment for a new build."
-          depends="compass:config-rbenv, npm:config"
+          depends=" npm:config"
           unless="build.env.prepared">
     <property name="build.env.prepared" value="true" />
   </target>
@@ -155,19 +155,18 @@
 
   <!-- ## Grunt targets -->
 
-  <target name="grunt:run-rbenv"
-          description="Runs Grunt via RBENV."
-          depends="compass:load-properties-rbenv">
-    <exec command="${rbenv.cmd.gemset} grunt"
-          passthru="true"
-          checkreturn="true" />
-  </target>
+  <!-- ## Removed rb-env target regarding JIRA DIP-47 avoid ruby in build -->
+
 
   <!-- ## npm targets -->
 
   <target name="npm:config"
           description="Configures npm packages for the project.">
     <exec command="npm install" passthru="true" checkreturn="true" />
+    <!-- ## npm command which builds the assets -->
+    <exec command="npm run build" passthru="true" checkreturn="true" />
   </target>
+
+
 
 </project>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="phpcs" default="phpcs:check">
+
+  <!-- ## Properties -->
+
+  <property name="phpcs.bin"          value="${project.basedir}/bin/phpcs" />
+  <property name="phpcs.report"       value="junit" />
+  <property name="phpcs.exclude"      value="" />
+  <property name="phpcs.ignore"       value="" />
+  <property name="phpcs.rulesets.dir" value="${project.basedir}/vendor/drupal/coder/coder_sniffer" />
+  <property name="phpcs.files.dir"    value="" />
+  <property name="phpcs.report.dir"   value="${project.basedir}/build/logs/phpcs" />
+
+  <!-- ## Targets -->
+
+  <target name="phpcs:check"
+          description="Checks code against Drupal coding standards and best practices."
+          depends="phpcs:check-cs, phpcs:check-bp" />
+
+  <target name="phpcs:check-cs"
+          description="Checks code against Drupal coding standards.">
+    <exec command="${phpcs.bin}
+                   --runtime-set installed_paths ${phpcs.rulesets.dir}
+                   --standard=Drupal
+                   --exclude=${phpcs.exclude}
+                   --ignore=${phpcs.ignore}
+                   ${phpcs.files.dir}"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="phpcs:check-bp"
+          description="Checks code against Drupal best practices.">
+    <exec command="${phpcs.bin}
+                   --runtime-set installed_paths ${phpcs.rulesets.dir}
+                   --standard=DrupalPractice
+                   --exclude=${phpcs.exclude}
+                   --ignore=${phpcs.ignore}
+                   ${phpcs.files.dir}"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="phpcs:check:ci"
+          description="Checks code against Drupal coding standards and best practices for the CI server."
+          depends="phpcs:check-cs:ci, phpcs:check-bp:ci" />
+
+  <target name="phpcs:check-cs:ci"
+          description="Checks code against Drupal coding standards for the CI server.">
+    <if>
+      <equals arg1="${phpcs.files.dir}" arg2="" />
+      <then>
+        <fail message="Please provide a phpcs.files.dir property." />
+      </then>
+    </if>
+
+    <mkdir dir="${phpcs.report.dir}" />
+
+    <exec command="${phpcs.bin}
+                   --report=${phpcs.report}
+                   --report-file=${phpcs.report.dir}/phpcs-cs.xml
+                   --runtime-set installed_paths ${phpcs.rulesets.dir}
+                   --standard=Drupal
+                   --exclude=${phpcs.exclude}
+                   --ignore=${phpcs.ignore}
+                   ${phpcs.files.dir}"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+  <target name="phpcs:check-bp:ci"
+          description="Checks code against Drupal best practices for the CI server.">
+    <if>
+      <equals arg1="${phpcs.files.dir}" arg2="" />
+      <then>
+        <fail message="Please provide a phpcs.files.dir property." />
+      </then>
+    </if>
+
+    <mkdir dir="${phpcs.report.dir}" />
+
+    <exec command="${phpcs.bin}
+                   --report=${phpcs.report}
+                   --report-file=${phpcs.report.dir}/phpcs-bp.xml
+                   --runtime-set installed_paths ${phpcs.rulesets.dir}
+                   --standard=DrupalPractice
+                   --exclude=${phpcs.exclude}
+                   --ignore=${phpcs.ignore}
+                   ${phpcs.files.dir}"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+</project>

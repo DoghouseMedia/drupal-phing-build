@@ -987,16 +987,16 @@
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
-            "name": "jorgegc/phing-compass",
+            "name": "doghouseagency/phing-compass",
             "version": "1.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jorgegc/phing-compass.git",
+                "url": "https://github.com/doghouseagency/phing-compass.git",
                 "reference": "40c81895f88b974f8b0cf7708256de66251a41e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jorgegc/phing-compass/zipball/40c81895f88b974f8b0cf7708256de66251a41e8",
+                "url": "https://api.github.com/repos/doghouseagency/phing-compass/zipball/40c81895f88b974f8b0cf7708256de66251a41e8",
                 "reference": "40c81895f88b974f8b0cf7708256de66251a41e8",
                 "shasum": ""
             },
@@ -1006,7 +1006,7 @@
                 "GPL-2.0+"
             ],
             "description": "A collection of Compass targets for Phing.",
-            "homepage": "https://github.com/jorgegc/phing-compass",
+            "homepage": "https://github.com/doghouseagency/phing-compass",
             "keywords": [
                 "compass",
                 "phing"
@@ -1014,16 +1014,16 @@
             "time": "2017-04-13T08:50:09+00:00"
         },
         {
-            "name": "jorgegc/phing-drush",
+            "name": "doghouseagency/phing-drush",
             "version": "4.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jorgegc/phing-drush.git",
+                "url": "https://github.com/doghouseagency/phing-drush.git",
                 "reference": "a89211679a5a70eaf38a663cc8d3116d984d2fd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jorgegc/phing-drush/zipball/a89211679a5a70eaf38a663cc8d3116d984d2fd7",
+                "url": "https://api.github.com/repos/doghouseagency/phing-drush/zipball/a89211679a5a70eaf38a663cc8d3116d984d2fd7",
                 "reference": "a89211679a5a70eaf38a663cc8d3116d984d2fd7",
                 "shasum": ""
             },
@@ -1036,7 +1036,7 @@
                 "MIT"
             ],
             "description": "A collection of Drush targets for Phing.",
-            "homepage": "https://github.com/jorgegc/phing-drush",
+            "homepage": "https://github.com/doghouseagency/phing-drush",
             "keywords": [
                 "Drush",
                 "phing"
@@ -1044,16 +1044,16 @@
             "time": "2018-09-18T08:08:08+00:00"
         },
         {
-            "name": "jorgegc/phing-phpcs",
+            "name": "doghouseagency/phing-phpcs",
             "version": "2.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jorgegc/phing-phpcs.git",
+                "url": "https://github.com/doghouseagency/phing-phpcs.git",
                 "reference": "ab63df03f35ea035439cbdf79c47a7bdc289bdb3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jorgegc/phing-phpcs/zipball/ab63df03f35ea035439cbdf79c47a7bdc289bdb3",
+                "url": "https://api.github.com/repos/doghouseagency/phing-phpcs/zipball/ab63df03f35ea035439cbdf79c47a7bdc289bdb3",
                 "reference": "ab63df03f35ea035439cbdf79c47a7bdc289bdb3",
                 "shasum": ""
             },
@@ -1066,7 +1066,7 @@
                 "GPL-2.0+"
             ],
             "description": "A collection of PHP_CodeSniffer targets for Phing.",
-            "homepage": "https://github.com/jorgegc/phing-phpcs",
+            "homepage": "https://github.com/doghouseagency/phing-phpcs",
             "keywords": [
                 "phing",
                 "phpcs"

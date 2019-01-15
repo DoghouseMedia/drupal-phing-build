@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="drush" default="drush:config">
+
+  <!-- ## Properties -->
+
+  <property name="drush.alias.file.source" value="${project.basedir}/example.site.yml" />
+  <property name="drush.alias.dir"         value="${env.HOME}/.drush/sites" />
+  <property name="drush.alias.file.dest"   value="${drush.alias.dir}/${phing.project.name}.site.yml" />
+
+  <!-- ## Targets -->
+
+  <target name="drush:config"
+          description="Configures Drush for the project.">
+    <mkdir dir="${drush.alias.dir}" />
+    <copy file="${drush.alias.file.source}"
+          tofile="${drush.alias.file.dest}"
+          overwrite="true">
+      <filterchain>
+        <expandproperties />
+      </filterchain>
+    </copy>
+  </target>
+
+</project>

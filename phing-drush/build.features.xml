@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="drush-features" default="drush-features:import">
+
+  <!-- ## Properties -->
+
+  <property name="drush.bin"    value="${project.basedir}/bin/drush" />
+  <property name="drush.target" value="" />
+
+  <!-- ## Targets -->
+
+  <target name="drush-features:import"
+          description="Imports all the config from all the features.">
+    <exec command="${drush.bin} ${drush.target} fia -y"
+          passthru="true"
+          checkreturn="true" />
+  </target>
+
+</project>
