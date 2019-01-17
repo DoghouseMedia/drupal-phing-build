@@ -1,5 +1,0 @@
-# Ignore binaries.
-/bin
-
-# Ignore third party libraries.
-/vendor
