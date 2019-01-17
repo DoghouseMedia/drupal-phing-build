@@ -4,7 +4,7 @@
     "require": {
         "phing/phing": "~2.7",
         "doghouseagency/phing-drush" : "*",
-        "doghouseagency/phing-drush" : "*"
+        "doghouseagency/phing-phpcs" : "*"
     },
     "config": {
         "bin-dir": "bin"
