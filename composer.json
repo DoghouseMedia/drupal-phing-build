@@ -3,8 +3,8 @@
     "description": "A default build system for Drupal projects.",
     "require": {
         "phing/phing": "~2.7",
-        "doghouseagency/phing-phpcs" : "*",
-        "doghouseagency/phing-drush" : "*"
+        "doghouseagency/phing-drush" : "*",
+        "doghouseagency/phing-phpcs" : "*"
     },
     "config": {
         "bin-dir": "bin"
