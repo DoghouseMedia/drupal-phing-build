@@ -6,19 +6,18 @@
   <!-- # Imports                                                             -->
   <!-- ///////////////////////////////////////////////////////////////////// -->
 
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-compass/build.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.cache.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.cron.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.database.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.download.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.features.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.files.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.install.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.maintenance.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.user.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-drush/build.watchdog.xml" optional="true" />
-  <import file="vendor/doghouseagency/drupal-phing-build/phing-phpcs/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.cache.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.cron.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.database.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.download.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.features.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.files.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.install.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.maintenance.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.user.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.watchdog.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-phpcs/build.xml" optional="true" />
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <!-- # Properties                                                          -->
