@@ -7,7 +7,7 @@ provide a framework to developers to streamline their workflow.
 
 It will make available and provide sensible defaults for tools such as:
 
-  - Compass
+  - Npm assets compile
   - PHP_CodeSniffer
 
 ## Installation
@@ -16,7 +16,7 @@ This project can be checked out with Composer.
 
 ```
 "require-dev": {
-    "doghouse/drupal-build": "*"
+    "doghouseagency/drupal-phing-build": "*"
 }
 ```
 
@@ -29,7 +29,7 @@ project's build base.
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="PROJECT-NAME" default="help">
-  <import file="vendor/doghouse/drupal-build/build.xml" />
+  <import file="vendor/doghouseagency/drupal-phing-build/build.xml" />
 </project>
 ```
 
@@ -47,15 +47,10 @@ so by creating a `build.local.properties` and placing it in the same directory.
 
 A full list of properties can be found [here](https://github.com/DoghouseMedia/drupal-phing-build/blob/master/browse/build.default.properties).
 
-### Compass configuration
+### Npm configuration
 
-This project compiles Sass files into CSS using Bundler via Ruby Version Manager
-and sets of Ruby gems. But in order to do that it requires the following files
-to exist at the root of the project.
+This project compiles Sass files into CSS using Bundler via npm package manager.
 
-  - `.ruby-gemset` - The Ruby gemset name (e.g. `myproject`).
-  - `.ruby-version` - The Ruby version (e.g. `2.4.0`).
-  - `Gemfile` - The list of Ruby gems the project depends on.
 
 Ensure these are created before attempting to run the build.
 
@@ -66,5 +61,5 @@ however it is also important to ensure that the following are also installed and
 configured:
 
   - Git
+  - Npm
   - Composer
-  - Ruby Version Manager

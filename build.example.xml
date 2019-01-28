@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="PROJECT-NAME" default="help">
-  <import file="vendor/doghouse/drupal-build/build.xml" />
+  <import file="vendor/doghouseagency/drupal-phing-build/build.xml" />
 </project>
