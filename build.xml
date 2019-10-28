@@ -6,19 +6,20 @@
   <!-- # Imports                                                             -->
   <!-- ///////////////////////////////////////////////////////////////////// -->
 
-  <import file="vendor/jorgegc/phing-compass/build.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.cache.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.cron.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.database.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.download.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.features.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.files.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.install.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.maintenance.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.user.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-drush/build.watchdog.xml" optional="true" />
-  <import file="vendor/jorgegc/phing-phpcs/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-compass/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-webpack/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.cache.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.cron.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.database.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.download.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.features.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.files.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.install.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.maintenance.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.user.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drush/build.watchdog.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-phpcs/build.xml" optional="true" />
 
   <!-- ///////////////////////////////////////////////////////////////////// -->
   <!-- # Properties                                                          -->
@@ -72,8 +73,18 @@
           depends="init:ci, clean:ci, compile, verify, analyse:ci" />
 
   <target name="compile"
-          description="Ensures the code is compiled and ready to go."
-          depends="prepare:wd, compass:compile-rbenv" />
+        description="Ensures the code is compiled with and ready to go."
+        depends="prepare:wd">
+    <if>
+      <equals arg1="${build.type}" arg2="webpack" />
+      <then>
+        <phingcall target="webpack:compile" />
+      </then>
+      <else>
+        <phingcall target="compass:compile-rbenv" />  
+      </else>  
+    </if> 
+  </target>
 
   <target name="verify"
           description="Checks whether the code is clean and functional."
@@ -106,9 +117,17 @@
 
   <target name="prepare:env"
           description="Prepares the environment for a new build."
-          depends="compass:config-rbenv, npm:config"
           unless="build.env.prepared">
-    <property name="build.env.prepared" value="true" />
+    <if>
+      <equals arg1="${build.type}" arg2="webpack" />
+      <then>
+        <phingcall target="webpack:config" />
+      </then>
+      <else>
+        <phingcall target="compass:config-rbenv" />  
+      </else>  
+    </if>       
+    <property name="build.env.prepared" value="yes" />
   </target>
 
   <target name="prepare:wd"

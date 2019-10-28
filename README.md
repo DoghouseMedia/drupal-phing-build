@@ -39,19 +39,27 @@ This project ships with sensible defaults, however you must override some of its
 properties to suit your project.
 
   1. Copy [build.example.properties](https://github.com/DoghouseMedia/drupal-phing-build/blob/master/build.example.properties)
-     to create a `build.default.properties` file at the root of your project.
+     to create a `build.default.properties` file at the root of your project. Multisites are supported via the `-Dsite=SITENAME` argument with  properties in a `build.SITENAME.properties` file.
   2. Update the necessary build properties and save.
 
 If you need to override properties for your local environment only, you can do
-so by creating a `build.local.properties` and placing it in the same directory.
+so by creating a `build.local.properties` and placing it in the same directory. Multisite local properties are overriden with a `build.SITENAME.local.properties` file.
+
+NOTE: Ensure all `*.properties` files *end with a new empty line*, if this is not done it breaks the aggregation of properties. 
 
 A full list of properties can be found [here](https://github.com/DoghouseMedia/drupal-phing-build/blob/master/browse/build.default.properties).
 
+### Webpack configuration
+
+To use webpack, ensure your build properties contains `build.type = webpack`.
+
+Webpack is the recommended build method.
+
 ### Compass configuration
 
-This project compiles Sass files into CSS using Bundler via Ruby Version Manager
-and sets of Ruby gems. But in order to do that it requires the following files
-to exist at the root of the project.
+To use compass, ensure your build properties contains `build.type = compass`.
+
+This project compiles Sass files into CSS using Bundler via Ruby Version Manager and sets of Ruby gems. But in order to do that it requires the following files to exist at the root of the project.
 
   - `.ruby-gemset` - The Ruby gemset name (e.g. `myproject`).
   - `.ruby-version` - The Ruby version (e.g. `2.4.0`).
