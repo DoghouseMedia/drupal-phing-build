@@ -6,6 +6,7 @@
         "doghouseagency/phing-webpack": "~1.0",
         "doghouseagency/phing-compass": "~1.0",
         "doghouseagency/phing-drush": "~4.2",
+        "doghouseagency/phing-drupal-tests": "~1.0",
         "doghouseagency/phing-phpcs": "~2.0"
     },
     "config": {

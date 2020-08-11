@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1beadff54e63f190e48f5e1ddf62b750",
+    "content-hash": "ac82cbff60e7b3cac1f5007fc50032fd",
     "packages": [
         {
             "name": "chi-teck/drupal-code-generator",
@@ -879,6 +879,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -999,6 +1000,33 @@
                 "phing"
             ],
             "time": "2019-01-08T08:46:47+00:00"
+        },
+        {
+            "name": "doghouseagency/phing-drupal-tests",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DoghouseMedia/phing-drupal-tests.git",
+                "reference": "78aba50a68f965229a9ea6f543634304f99daae1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DoghouseMedia/phing-drupal-tests/zipball/78aba50a68f965229a9ea6f543634304f99daae1",
+                "reference": "78aba50a68f965229a9ea6f543634304f99daae1",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "description": "A collection of automated testing targets for Phing.",
+            "homepage": "https://github.com/DoghouseMedia/phing-drupal-tests",
+            "keywords": [
+                "drupal",
+                "phing"
+            ],
+            "time": "2020-08-11T08:15:37+00:00"
         },
         {
             "name": "doghouseagency/phing-drush",
@@ -1408,6 +1436,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -1454,6 +1483,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
