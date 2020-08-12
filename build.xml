@@ -8,6 +8,7 @@
 
   <import file="vendor/doghouseagency/phing-compass/build.xml" optional="true" />
   <import file="vendor/doghouseagency/phing-webpack/build.xml" optional="true" />
+  <import file="vendor/doghouseagency/phing-drupal-tests/build.xml" optional="true" />
   <import file="vendor/doghouseagency/phing-drush/build.xml" optional="true" />
   <import file="vendor/doghouseagency/phing-drush/build.cache.xml" optional="true" />
   <import file="vendor/doghouseagency/phing-drush/build.cron.xml" optional="true" />
