@@ -170,7 +170,12 @@
 
   <target name="git-submodule:config"
           description="Configures Git submodules for the project.">
-    <exec command="git submodule update --init --recursive" passthru="true" checkreturn="true" />
+    <if>
+      <available file=".gitmodules" type="file" />
+      <then>
+        <exec command="git submodule update --init --recursive" passthru="true" checkreturn="true" />
+      </then>
+    </if>
   </target>
 
   <!-- ## Grunt targets -->
